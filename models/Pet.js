@@ -1,25 +1,38 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
-  title: {
+const PetSchema = new mongoose.Schema({
+  name: {
     type: String,
     required: true,
   },
   image: {
     type: String,
-    require: true,
   },
   cloudinaryId: {
     type: String,
     require: true,
   },
-  caption: {
+  animalType: {
+    type: String,
+  },
+  allergies: {
+    type: String,
+  },
+  meds: {
+    type: String,
+  },
+  treats: {
+    type: String,
+  },
+  careType: {
     type: String,
     required: true,
   },
-  likes: {
-    type: Number,
-    required: true,
+  frequency: {
+    type: String,
+  },
+  notes: {
+    type: String,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -31,4 +44,4 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("Pets", PetSchema);

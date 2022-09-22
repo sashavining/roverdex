@@ -2,10 +2,10 @@
   <div>
     <div>
       <ul>
-        <% for(var i=0; i<posts.length; i++) {%>
+        <% for(var i=0; i < pets.length; i++) {%>
           <li >
-            <a href="/post/<%= posts[i]._id%>">
-              <img src="<%= posts[i].image%>">
+            <a href="/pet/<%= pets[i]._id%>">
+              <img src="<%= pets[i].image%>">
             </a>
           </li>
         <% } %>
