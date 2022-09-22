@@ -8,15 +8,19 @@
               <a href="/logout">Logout</a>
           </div>
           <div>
-            <h2>Add a post</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+            <h2>Add a pet</h2>
+            <form action="/pet/createPet" enctype="multipart/form-data" method="POST">
               <div>
-                  <label for="title" >Title</label>
-                  <input type="text" id="title" name="title">
+                  <label for="name" >Name</label>
+                  <input type="text" id="name" name="name">
               </div>
               <div>
-                <label for="caption" >Caption</label>
-                <textarea id="caption" name="caption"></textarea>
+                <label for="careType" >Service Type</label>
+                <input type="text" id="careType" name="careType">
+            </div>
+              <div>
+                <label for="note" >Note</label>
+                <textarea id="note" name="note"></textarea>
               </div>
               <div>
                 <label for="imgUpload">Image</label>
@@ -28,10 +32,10 @@
       </div>
       <div>
         <ul>
-        <% for(var i=0; i<posts.length; i++) {%>
+        <% for(var i=0; i<pets.length; i++) {%>
           <li>
-            <a href="/post/<%= posts[i]._id%>">
-              <img src="<%= posts[i].image%>">
+            <a href="/pet/<%= pets[i]._id%>">
+              <img src="<%= pets[i].image%>">
             </a>
           </li>
         <% } %>
