@@ -5,7 +5,7 @@
         <% for(var i=0; i < pets.length; i++) {%>
           <li >
             <a href="/pet/<%= pets[i]._id%>">
-              <img src="<%= pets[i].image%>">
+              <img src="<%= pets[i].image%>" class="max-w-full h-auto rounded-full" alt="<%= pets[i].name %> profile link">
             </a>
           </li>
         <% } %>
