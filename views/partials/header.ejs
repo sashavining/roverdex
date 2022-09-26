@@ -36,42 +36,33 @@
             <h2 class="sr-only" id="header-navigation">Header navigation</h2>
     
             <ul class="flex items-center gap-6 text-sm">
-              <li>
-                <a class="text-roverNeutral transition hover:text-roverNeutral/75" href="/">
-                  About
-                </a>
-              </li>
-    
-              <li>
-                <a class="text-roverNeutral transition hover:text-roverNeutral/75" href="/">
-                  Careers
-                </a>
-              </li>
-    
-              <li>
-                <a class="text-roverNeutral transition hover:text-roverNeutral/75" href="/">
-                  History
-                </a>
-              </li>
+              
+              <% if(page === "feed") { %>
+                <li><a href="/profile"class="text-roverNeutral transition hover:text-roverNeutral/75">Profile</a></li>
+              <% } else if (page === "profile"){ %>
+                <li><a href="/feed"class="text-roverNeutral transition hover:text-roverNeutral/75">Feed</a></li>
+              <% } else if (page != "index" && page != "login" && page != "signup") { %>
+                <li><a href="/feed"class="text-roverNeutral transition hover:text-roverNeutral/75">Feed</a></li>
+                <li><a href="/profile"class="text-roverNeutral transition hover:text-roverNeutral/75">Profile</a></li>
+              <% } %>
     
             </ul>
           </nav>
     
           <div class="flex items-center gap-4">
             <div class="sm:gap-4 sm:flex">
-              <a
-                class="block px-5 py-2.5 text-sm font-medium text-white bg-roverNavy hover:bg-roverNavy/75 transition rounded-md"
-                href="/login"
-              >
+              <% if(typeof user === 'undefined') { %>
+                <a
+                class="block px-5 py-2.5 text-sm font-medium text-white bg-roverNavy hover:bg-roverNavy/75 transition rounded-md" href="/login">
                 Login
               </a>
-    
               <a
-                class="hidden sm:block px-5 py-2.5 text-sm font-medium text-roverNavy bg-gray-100 rounded-md hover:bg-white/75 transition"
-                href="/signup"
-              >
+                class="hidden sm:block px-5 py-2.5 text-sm font-medium text-roverNavy bg-gray-100 rounded-md hover:bg-white/75 transition" href="/signup">
                 Register
               </a>
+              <% } else { %>
+                <a href="/logout">Log Out</a>
+              <% } %>
             </div>
     
             <button

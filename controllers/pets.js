@@ -5,7 +5,7 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const pets = await Pet.find({ user: req.user.id });
-      res.render("profile.ejs", { pets: pets, user: req.user });
+      res.render("profile.ejs", { pets: pets, user: req.user, page: "profile" });
     } catch (err) {
       console.log(err);
     }
@@ -13,7 +13,7 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const pets = await Pet.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { pets: pets });
+      res.render("feed.ejs", { pets: pets, user: req.user, page: "feed"});
     } catch (err) {
       console.log(err);
     }
@@ -21,7 +21,7 @@ module.exports = {
   getPet: async (req, res) => {
     try {
       const pet = await Pet.findById(req.params.id);
-      res.render("pet.ejs", { pet: pet, user: req.user });
+      res.render("pet.ejs", { pet: pet, user: req.user, page: "pet" });
     } catch (err) {
       console.log(err);
     }
