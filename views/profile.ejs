@@ -11,15 +11,35 @@
             <h2>Add a pet</h2>
             <form action="/pet/createPet" enctype="multipart/form-data" method="POST">
               <div>
-                  <label for="name" >Name</label>
+                  <label for="name">Name:</label>
                   <input type="text" id="name" name="name">
               </div>
               <div>
-                <label for="careType" >Service Type</label>
+                <label for="careType">Service Type:</label>
                 <input type="text" id="careType" name="careType">
-            </div>
+              </div>
               <div>
-                <label for="note" >Note</label>
+                <label for="frequency">Service Frequency:</label>
+                <input type="text" id="frequency" name="frequency">
+              </div>
+              <div>
+                <label for="animalType">Animal Type:</label>
+                <input type="text" id="animalType" name="animalType">
+              </div>
+              <div>
+                <label for="allergies">Allergies:</label>
+                <input type="text" id="allergies" name="allergies">
+              </div>
+              <div>
+                <label for="meds">Medicines:</label>
+                <input type="text" id="meds" name="meds">
+              </div>
+              <div>
+                <label for="treats">Treats/Food Details:</label>
+                <input type="text" id="treats" name="treats">
+              </div>
+              <div>
+                <label for="note" >Note:</label>
                 <textarea id="note" name="note"></textarea>
               </div>
               <div>

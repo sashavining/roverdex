@@ -2,9 +2,18 @@
 <div>
   <div>
     <div>
-      <h2><%= pet.title %></h2>
+      <h2>Name: <%= pet.name %></h2>
       <img src="<%= pet.image%>" />
+
       <div>
+        <p>Service Type: <%= pet.careType %></p>
+        <p>Service Frequency: <%= pet.frequency %></p>
+        <p>Animal Type: <%= pet.animalType %></p>
+        <p>Allergies: <%= pet.allergies %></p>
+        <p>Medicines: <%= pet.meds %></p>
+        <p>Treats/Food: <%= pet.treats %></p>
+        <p>Notes: <%= pet.notes %></p>
+
         <%if(pet.user == user.id){ %>
         <form
           action="/pet/deletePet/<%= pet.id %>?_method=DELETE"
@@ -14,6 +23,7 @@
         </form>
         <%}%>
       </div>
+
     </div>
     <div>
       <p><%= pet.title %></p>

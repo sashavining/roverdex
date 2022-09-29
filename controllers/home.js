@@ -5,4 +5,10 @@ module.exports = {
       page: "index"
     });
   },
+  getAbout: (req, res) => {
+    res.render("about.ejs", {
+      user: req.user,
+      page: "about"
+    });
+  },
 };
