@@ -12,7 +12,7 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const pets = await Pet.find().sort({ createdAt: "desc" }).lean();
+      const pets = await Pet.find({ user: req.user.id }).sort({ createdAt: "desc" }).lean();
       res.render("feed.ejs", { pets: pets, user: req.user, page: "feed"});
     } catch (err) {
       console.log(err);
