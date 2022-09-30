@@ -1019,6 +1019,10 @@ select{
   text-align:center;
 }
 
+.font-brand{
+  font-family:"Baloo 2";
+}
+
 .text-3xl{
   font-size:1.875rem;
   line-height:2.25rem;
@@ -1032,6 +1036,11 @@ select{
 .text-lg{
   font-size:1.125rem;
   line-height:1.75rem;
+}
+
+.text-5xl{
+  font-size:3rem;
+  line-height:1;
 }
 
 .font-extrabold{
@@ -1079,6 +1088,11 @@ select{
 .text-gray-600{
   --tw-text-opacity:1;
   color:rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.text-roverGold{
+  --tw-text-opacity:1;
+  color:rgb(219 177 59 / var(--tw-text-opacity));
 }
 
 .underline{
