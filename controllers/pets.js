@@ -28,13 +28,9 @@ module.exports = {
   },
   createPet: async (req, res) => {
     try {
-      // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
 
-      await Pet.create({
+      const petData = {
         name: req.body.name,
-        image: result.secure_url,
-        cloudinaryId: result.public_id,
         animalType: req.body.animalType,
         allergies: req.body.allergies,
         meds: req.body.meds,
@@ -43,7 +39,14 @@ module.exports = {
         frequency: req.body.frequency,
         notes: req.body.notes,
         user: req.user.id,
-      });
+      }
+      if (req.file){
+        const result = await cloudinary.uploader.upload(req.file.path);
+        petData.image = result.secure_url;
+        petData.cloudinaryId = result.public_id
+      }
+      await Pet.create(petData);
+     
       console.log("Pet has been added!");
       res.redirect("/profile");
     } catch (err) {
