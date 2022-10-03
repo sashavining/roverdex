@@ -9,7 +9,9 @@ router.get("/:id", ensureAuth, petsController.getPet);
 
 router.post("/createPet", upload.single("file"), petsController.createPet);
 
-//router.put("/likePet/:id", petsController.likePet);
+router.get("/editPet/:id", petsController.editPet)
+
+router.put("/editPet/:id", petsController.updatePet)
 
 router.delete("/deletePet/:id", petsController.deletePet);
 
