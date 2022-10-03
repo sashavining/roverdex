@@ -87,11 +87,14 @@ module.exports = {
         user: req.user.id,
       }
       if (req.file){
-        const result = await cloudinary.uploader.upload(req.file.path);
-        petData.image = result.secure_url;
+        if (pet.cloudinaryId){
+          await cloudinary.uploader.destroy(pet.cloudinaryId);
+        }
+        const result = await cloudinary.uploader.upload(req.file.path)
+        petData.image = result.secure_url
         petData.cloudinaryId = result.public_id
       }
-      await Pet.findOneAndUpdate({_id:req.params.id}, petData);
+      await pet.save(petData)
      
       console.log("Pet has been updated!");
       res.redirect("/pet/<%= pet.id %>");
@@ -105,13 +108,15 @@ module.exports = {
       // Find pet by id
       let pet = await Pet.findById({ _id: req.params.id });
       // Delete image from cloudinary
-      await cloudinary.uploader.destroy(pet.cloudinaryId);
+      if (pet.cloudinaryId){
+        await cloudinary.uploader.destroy(pet.cloudinaryId);
+      }
       // Delete pet from db
       await Pet.remove({ _id: req.params.id });
       console.log("Deleted Pet");
-      res.redirect("/profile");
+      res.redirect("/clients");
     } catch (err) {
-      res.redirect("/profile");
+      res.redirect("/clients");
     }
   },
 };

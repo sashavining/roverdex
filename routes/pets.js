@@ -11,7 +11,7 @@ router.post("/createPet", upload.single("file"), petsController.createPet);
 
 router.get("/editPet/:id", petsController.editPet)
 
-router.put("/editPet/:id", petsController.updatePet)
+router.post("/editPet/:id", petsController.updatePet)
 
 router.delete("/deletePet/:id", petsController.deletePet);
 
