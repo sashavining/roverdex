@@ -1,70 +1,13 @@
 <%- include('partials/header') %>
 <div>
   <div>
-      <div>
-          <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout">Logout</a>
-          </div>
-          <div>
-            <h2>Add a pet</h2>
-            <form action="/pet/createPet" enctype="multipart/form-data" method="POST">
-              <div>
-                  <label for="name">Name:</label>
-                  <input type="text" id="name" name="name">
-              </div>
-              <div>
-                <label for="careType">Service Type:</label>
-                <input type="text" id="careType" name="careType">
-              </div>
-              <div>
-                <label for="frequency">Service Frequency:</label>
-                <input type="text" id="frequency" name="frequency">
-              </div>
-              <div>
-                <label for="animalType">Animal Type:</label>
-                <input type="text" id="animalType" name="animalType">
-              </div>
-              <div>
-                <label for="allergies">Allergies:</label>
-                <input type="text" id="allergies" name="allergies">
-              </div>
-              <div>
-                <label for="meds">Medicines:</label>
-                <input type="text" id="meds" name="meds">
-              </div>
-              <div>
-                <label for="treats">Treats/Food Details:</label>
-                <input type="text" id="treats" name="treats">
-              </div>
-              <div>
-                <label for="note" >Note:</label>
-                <textarea id="note" name="note"></textarea>
-              </div>
-              <div>
-                <label for="imgUpload">Image</label>
-                <input type="file" id="imageUpload" name="file">
-              </div>
-              <button type="submit" value="Upload">Submit</button>
-            </form>
-          </div>
-      </div>
-      <div>
-        <ul>
-        <% for(var i=0; i<pets.length; i++) {%>
-          <li>
-            <a href="/pet/<%= pets[i]._id%>">
-              <img src="<%= pets[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-        <div>
-          <a href="/feed">Return to Feed</a>
-        </div>  
-      </div>  
-    </div>
+      <p><strong>User Name</strong>: <%= user.userName %></p>
+      <p><strong>Email</strong>: <%= user.email %></p>
   </div>
+        
+  <div>
+    <a href="/clients">Return to Clients</a>
+  </div>  
+      
 </div>
 <%- include('partials/footer') %>

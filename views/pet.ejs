@@ -15,22 +15,16 @@
         <p>Notes: <%= pet.notes %></p>
 
         <%if(pet.user == user.id){ %>
-        <form
-          action="/pet/deletePet/<%= pet.id %>?_method=DELETE"
-          method="POST"
-        >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
-        </form>
+          <a href="/pet/editPet/<%=pet.id %>"><span class="fas fa-edit"></span></a>
+          <form action="/pet/deletePet/<%= pet.id %>?_method=DELETE" method="POST">
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          </form>
         <%}%>
       </div>
 
     </div>
     <div>
       <p><%= pet.title %></p>
-    </div>
-    <div>
-      <a href="/profile">Return to Profile</a>
-      <a href="/feed">Return to Feed</a>
     </div>
   </div>
 </div>
