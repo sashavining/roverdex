@@ -1090,11 +1090,6 @@ select{
   color:rgb(75 85 99 / var(--tw-text-opacity));
 }
 
-.text-roverGold{
-  --tw-text-opacity:1;
-  color:rgb(219 177 59 / var(--tw-text-opacity));
-}
-
 .underline{
   -webkit-text-decoration-line:underline;
           text-decoration-line:underline;
