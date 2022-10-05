@@ -65,7 +65,7 @@ module.exports = {
 
   editPet: async (req, res) => {
     try {
-      const pet = await Pet.findById(req.params.id);
+      let pet = await Pet.findById(req.params.id);
       res.render("editPet.ejs", { pet: pet, user: req.user, page: "editPet" });
     } catch (err) {
       console.log(err);
@@ -73,8 +73,9 @@ module.exports = {
   },
 
   updatePet: async (req, res) => {
+    let pet = await Pet.findById({ _id: req.params.id });
+    console.log(pet)
     try {
-      let pet = await Pet.findById({ _id: req.params.id });
       const petData = {
         name: req.body.name,
         animalType: req.body.animalType,
@@ -94,10 +95,10 @@ module.exports = {
         petData.image = result.secure_url
         petData.cloudinaryId = result.public_id
       }
-      await pet.save(petData)
+      await Pet.updateOne(pet, petData)
      
       console.log("Pet has been updated!");
-      res.redirect("/pet/<%= pet.id %>");
+      res.redirect("/clients");
     } catch (err) {
       console.log(err);
     }

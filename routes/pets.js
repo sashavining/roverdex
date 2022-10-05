@@ -9,9 +9,9 @@ router.get("/:id", ensureAuth, petsController.getPet);
 
 router.post("/createPet", upload.single("file"), petsController.createPet);
 
-router.get("/editPet/:id", petsController.editPet)
+router.get("/editPet/:id", petsController.editPet);
 
-router.post("/editPet/:id", petsController.updatePet)
+router.post("/editPet/:id", upload.single("file"), petsController.updatePet);
 
 router.delete("/deletePet/:id", petsController.deletePet);
 
