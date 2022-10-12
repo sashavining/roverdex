@@ -41,19 +41,15 @@
               <% if(page === "clients") { %>
                 <li><a href="/profile"class="text-roverNeutral transition hover:text-roverNeutral/75">Profile</a></li>
                 <li><a href="/clients"class="text-roverNeutral transition hover:text-roverNeutral/75 underline">Clients</a></li>
-                <li><a href="/newPet"class="text-roverNeutral transition hover:text-roverNeutral/75">Add New Pet</a></li>
               <% } else if (page === "profile"){ %>
                 <li><a href="/profile"class="text-roverNeutral transition hover:text-roverNeutral/75 underline">Profile</a></li>
                 <li><a href="/clients"class="text-roverNeutral transition hover:text-roverNeutral/75">Clients</a></li>
-                <li><a href="/newPet"class="text-roverNeutral transition hover:text-roverNeutral/75">Add New Pet</a></li>
               <% } else if (page === "newPet") { %>
                 <li><a href="/profile"class="text-roverNeutral transition hover:text-roverNeutral/75">Profile</a></li>
                 <li><a href="/clients"class="text-roverNeutral transition hover:text-roverNeutral/75">Clients</a></li>
-                <li><a href="/newPet"class="text-roverNeutral transition hover:text-roverNeutral/75 underline">Add New Pet</a></li>
               <% } else if (typeof user !== 'undefined') { %>
                 <li><a href="/profile"class="text-roverNeutral transition hover:text-roverNeutral/75">Profile</a></li>
                 <li><a href="/clients"class="text-roverNeutral transition hover:text-roverNeutral/75">Clients</a></li>
-                <li><a href="/newPet"class="text-roverNeutral transition hover:text-roverNeutral/75">Add New Pet</a></li>
               <% } %>
     
             </ul>
