@@ -53,6 +53,8 @@ module.exports = {
         const result = await cloudinary.uploader.upload(req.file.path);
         petData.image = result.secure_url;
         petData.cloudinaryId = result.public_id
+      } else {
+        petData.image = "/imgs/rover-default-image.webp"
       }
       await Pet.create(petData);
      
