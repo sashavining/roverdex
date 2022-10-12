@@ -1,8 +1,8 @@
 <%- include('partials/header') %>
-  <div>
+  <main class="flex flex-col min-h-screen">
     <div>
       <ul>
-        <% for(var i=0; i < pets.length; i++) {%>
+        <% for(let i = 0; i < pets.length; i++) {%>
           <li >
             <a href="/pet/<%= pets[i]._id%>">
               <img src="<%= pets[i].image%>" class="max-w-full h-auto rounded-full" alt="<%= pets[i].name %> profile link">
@@ -11,5 +11,5 @@
         <% } %>
         </ul>
     </div>
-  </div>  
+  </main>  
 <%- include('partials/footer') %>
