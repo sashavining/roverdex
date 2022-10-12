@@ -757,6 +757,14 @@ select{
   left:50%;
 }
 
+.m-6{
+  margin:1.5rem;
+}
+
+.m-9{
+  margin:2.25rem;
+}
+
 .mx-auto{
   margin-left:auto;
   margin-right:auto;
@@ -772,12 +780,18 @@ select{
   margin-bottom:5rem;
 }
 
-.mb-2{
-  margin-bottom:0.5rem;
+.my-6{
+  margin-top:1.5rem;
+  margin-bottom:1.5rem;
 }
 
-.mr-2{
-  margin-right:0.5rem;
+.my-9{
+  margin-top:2.25rem;
+  margin-bottom:2.25rem;
+}
+
+.mb-2{
+  margin-bottom:0.5rem;
 }
 
 .mt-4{
@@ -800,16 +814,20 @@ select{
   margin-top:0.75rem;
 }
 
+.mt-6{
+  margin-top:1.5rem;
+}
+
 .block{
   display:block;
 }
 
-.inline-block{
-  display:inline-block;
-}
-
 .flex{
   display:flex;
+}
+
+.grid{
+  display:grid;
 }
 
 .hidden{
@@ -878,6 +896,10 @@ select{
   transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.grid-cols-1{
+  grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+
 .flex-col{
   flex-direction:column;
 }
@@ -910,6 +932,10 @@ select{
   gap:1.5rem;
 }
 
+.justify-self-center{
+  justify-self:center;
+}
+
 .overflow-hidden{
   overflow:hidden;
 }
@@ -926,9 +952,23 @@ select{
   border-radius:0.375rem;
 }
 
-.bg-gray-200{
+.border-b-8{
+  border-bottom-width:8px;
+}
+
+.border-roverGold{
+  --tw-border-opacity:1;
+  border-color:rgb(219 177 59 / var(--tw-border-opacity));
+}
+
+.bg-roverNeutral{
   --tw-bg-opacity:1;
-  background-color:rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color:rgb(247 244 229 / var(--tw-bg-opacity));
+}
+
+.bg-white{
+  --tw-bg-opacity:1;
+  background-color:rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-roverNeutral\/90{
@@ -938,16 +978,6 @@ select{
 .bg-roverBlue{
   --tw-bg-opacity:1;
   background-color:rgb(36 148 162 / var(--tw-bg-opacity));
-}
-
-.bg-white{
-  --tw-bg-opacity:1;
-  background-color:rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-roverNeutral{
-  --tw-bg-opacity:1;
-  background-color:rgb(247 244 229 / var(--tw-bg-opacity));
 }
 
 .bg-roverGold{
@@ -981,6 +1011,10 @@ select{
   background-repeat:no-repeat;
 }
 
+.p-9{
+  padding:2.25rem;
+}
+
 .p-4{
   padding:1rem;
 }
@@ -1000,21 +1034,6 @@ select{
 .px-6{
   padding-left:1.5rem;
   padding-right:1.5rem;
-}
-
-.py-4{
-  padding-top:1rem;
-  padding-bottom:1rem;
-}
-
-.px-3{
-  padding-left:0.75rem;
-  padding-right:0.75rem;
-}
-
-.py-1{
-  padding-top:0.25rem;
-  padding-bottom:0.25rem;
 }
 
 .px-4{
@@ -1052,14 +1071,6 @@ select{
   padding-bottom:0.625rem;
 }
 
-.pt-4{
-  padding-top:1rem;
-}
-
-.pb-2{
-  padding-bottom:0.5rem;
-}
-
 .pl-12{
   padding-left:3rem;
 }
@@ -1077,19 +1088,14 @@ select{
   line-height:1.75rem;
 }
 
-.text-base{
-  font-size:1rem;
-  line-height:1.5rem;
+.text-3xl{
+  font-size:1.875rem;
+  line-height:2.25rem;
 }
 
 .text-sm{
   font-size:0.875rem;
   line-height:1.25rem;
-}
-
-.text-3xl{
-  font-size:1.875rem;
-  line-height:2.25rem;
 }
 
 .text-lg{
@@ -1102,12 +1108,13 @@ select{
   line-height:1;
 }
 
-.font-bold{
-  font-weight:700;
+.text-2xl{
+  font-size:1.5rem;
+  line-height:2rem;
 }
 
-.font-semibold{
-  font-weight:600;
+.font-bold{
+  font-weight:700;
 }
 
 .font-extrabold{
@@ -1122,9 +1129,9 @@ select{
   text-transform:uppercase;
 }
 
-.text-gray-700{
+.text-roverNavy{
   --tw-text-opacity:1;
-  color:rgb(55 65 81 / var(--tw-text-opacity));
+  color:rgb(45 50 90 / var(--tw-text-opacity));
 }
 
 .text-roverBlue{
@@ -1140,11 +1147,6 @@ select{
 .text-red-700{
   --tw-text-opacity:1;
   color:rgb(185 28 28 / var(--tw-text-opacity));
-}
-
-.text-roverNavy{
-  --tw-text-opacity:1;
-  color:rgb(45 50 90 / var(--tw-text-opacity));
 }
 
 .text-roverNeutral{
@@ -1251,6 +1253,10 @@ select{
     width:auto;
   }
 
+  .sm\:grid-cols-4{
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+  }
+
   .sm\:gap-4{
     gap:1rem;
   }
@@ -1294,6 +1300,10 @@ select{
 }
 
 @media (min-width: 768px){
+  .md\:m-6{
+    margin:1.5rem;
+  }
+
   .md\:mb-8{
     margin-bottom:2rem;
   }
@@ -1304,6 +1314,14 @@ select{
 
   .md\:hidden{
     display:none;
+  }
+
+  .md\:grid-cols-3{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4{
+    grid-template-columns:repeat(4, minmax(0, 1fr));
   }
 
   .md\:justify-between{
@@ -1339,6 +1357,14 @@ select{
 
   .lg\:w-5\/12{
     width:41.666667%;
+  }
+
+  .lg\:grid-cols-3{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4{
+    grid-template-columns:repeat(4, minmax(0, 1fr));
   }
 
   .lg\:items-center{
