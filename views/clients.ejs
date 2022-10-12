@@ -1,15 +1,23 @@
 <%- include('partials/header') %>
   <main class="flex flex-col min-h-screen">
     <div>
-      <ul>
         <% for(let i = 0; i < pets.length; i++) {%>
-          <li >
-            <a href="/pet/<%= pets[i]._id%>">
-              <img src="<%= pets[i].image%>" class="max-w-full h-auto rounded-full" alt="<%= pets[i].name %> profile link">
-            </a>
-          </li>
+          <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="<%= pets[i].image%>" alt="<%= pets[i].name %> profile link">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+              <p class="text-gray-700 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+              </p>
+              <a href="/pet/<%= pets[i]._id%>">linky linky :)</a>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+            </div>
+          </div>
         <% } %>
-        </ul>
     </div>
   </main>  
 <%- include('partials/footer') %>
