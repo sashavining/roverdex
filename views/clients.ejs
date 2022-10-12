@@ -3,6 +3,17 @@
     <h2 class="text-center font-brand font-extrabold text-5xl text-roverNavy my-9">Clients</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
+      <a href="/newPet">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg m-6">
+          <div class="border-b-8 border-roverGold">
+            <img class="w-full" src="/imgs/add-pet-icon.webp" alt="">
+          </div>
+          <div class="px-6 p-9 bg-white text-center">
+           <span class="font-bold text-2xl mb-2 text-roverNavy font-brand">Add New Pet</span>
+          </div>
+        </div>
+      </a>
+
         <% for(let i = 0; i < pets.length; i++) {%>
           <a href="/pet/<%= pets[i]._id%>">
           <div class="max-w-sm rounded overflow-hidden shadow-lg m-6">
