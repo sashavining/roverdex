@@ -761,8 +761,9 @@ select{
   margin:1.5rem;
 }
 
-.m-9{
-  margin:2.25rem;
+.my-9{
+  margin-top:2.25rem;
+  margin-bottom:2.25rem;
 }
 
 .mx-auto{
@@ -778,16 +779,6 @@ select{
 .my-20{
   margin-top:5rem;
   margin-bottom:5rem;
-}
-
-.my-6{
-  margin-top:1.5rem;
-  margin-bottom:1.5rem;
-}
-
-.my-9{
-  margin-top:2.25rem;
-  margin-bottom:2.25rem;
 }
 
 .mb-2{
@@ -812,10 +803,6 @@ select{
 
 .mt-3{
   margin-top:0.75rem;
-}
-
-.mt-6{
-  margin-top:1.5rem;
 }
 
 .block{
@@ -920,6 +907,10 @@ select{
   justify-content:center;
 }
 
+.justify-items-center{
+  justify-items:center;
+}
+
 .gap-4{
   gap:1rem;
 }
@@ -930,10 +921,6 @@ select{
 
 .gap-6{
   gap:1.5rem;
-}
-
-.justify-self-center{
-  justify-self:center;
 }
 
 .overflow-hidden{
@@ -1083,9 +1070,14 @@ select{
   font-family:"Baloo 2";
 }
 
-.text-xl{
-  font-size:1.25rem;
-  line-height:1.75rem;
+.text-5xl{
+  font-size:3rem;
+  line-height:1;
+}
+
+.text-2xl{
+  font-size:1.5rem;
+  line-height:2rem;
 }
 
 .text-3xl{
@@ -1103,22 +1095,12 @@ select{
   line-height:1.75rem;
 }
 
-.text-5xl{
-  font-size:3rem;
-  line-height:1;
-}
-
-.text-2xl{
-  font-size:1.5rem;
-  line-height:2rem;
+.font-extrabold{
+  font-weight:800;
 }
 
 .font-bold{
   font-weight:700;
-}
-
-.font-extrabold{
-  font-weight:800;
 }
 
 .font-medium{
@@ -1253,10 +1235,6 @@ select{
     width:auto;
   }
 
-  .sm\:grid-cols-4{
-    grid-template-columns:repeat(4, minmax(0, 1fr));
-  }
-
   .sm\:gap-4{
     gap:1rem;
   }
@@ -1300,10 +1278,6 @@ select{
 }
 
 @media (min-width: 768px){
-  .md\:m-6{
-    margin:1.5rem;
-  }
-
   .md\:mb-8{
     margin-bottom:2rem;
   }
@@ -1316,12 +1290,16 @@ select{
     display:none;
   }
 
-  .md\:grid-cols-3{
-    grid-template-columns:repeat(3, minmax(0, 1fr));
+  .md\:w-6\/12{
+    width:50%;
   }
 
-  .md\:grid-cols-4{
-    grid-template-columns:repeat(4, minmax(0, 1fr));
+  .md\:w-8\/12{
+    width:66.666667%;
+  }
+
+  .md\:grid-cols-3{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
   }
 
   .md\:justify-between{
@@ -1359,8 +1337,16 @@ select{
     width:41.666667%;
   }
 
-  .lg\:grid-cols-3{
-    grid-template-columns:repeat(3, minmax(0, 1fr));
+  .lg\:w-8\/12{
+    width:66.666667%;
+  }
+
+  .lg\:w-6\/12{
+    width:50%;
+  }
+
+  .lg\:w-7\/12{
+    width:58.333333%;
   }
 
   .lg\:grid-cols-4{
