@@ -54,7 +54,7 @@ module.exports = {
         petData.image = result.secure_url;
         petData.cloudinaryId = result.public_id
       } else {
-        petData.image = "/imgs/rover-default-image.webp"
+        petData.image = "/imgs/rover-default-image.png"
       }
       await Pet.create(petData);
      
@@ -100,7 +100,7 @@ module.exports = {
       await Pet.updateOne(pet, petData)
      
       console.log("Pet has been updated!");
-      res.redirect("/clients");
+      res.redirect(`/pet/${pet._id}`);
     } catch (err) {
       console.log(err);
     }
