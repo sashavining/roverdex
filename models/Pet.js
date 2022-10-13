@@ -7,10 +7,10 @@ const PetSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+    required: true,
   },
   cloudinaryId: {
     type: String,
-    require: true,
   },
   animalType: {
     type: String,

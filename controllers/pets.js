@@ -55,6 +55,7 @@ module.exports = {
         petData.cloudinaryId = result.public_id
       } else {
         petData.image = "/imgs/rover-default-image.webp"
+        petData.cloudinaryId = null
       }
       await Pet.create(petData);
      
