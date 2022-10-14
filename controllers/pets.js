@@ -101,7 +101,7 @@ module.exports = {
       await Pet.updateOne(pet, petData)
      
       console.log("Pet has been updated!");
-      res.redirect("/clients");
+      res.redirect(`/pet/${pet._id}`);
     } catch (err) {
       console.log(err);
     }
