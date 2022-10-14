@@ -54,13 +54,13 @@ module.exports = {
         petData.image = result.secure_url;
         petData.cloudinaryId = result.public_id
       } else {
-        petData.image = "/imgs/rover-default-image.webp"
+        petData.image = "/imgs/rover-default-image.png"
         petData.cloudinaryId = null
       }
-      await Pet.create(petData);
+      const newPet = await Pet.create(petData);
      
       console.log("Pet has been added!");
-      res.redirect("/profile");
+      res.redirect(`/pet/${newPet._id}`);
     } catch (err) {
       console.log(err);
     }
