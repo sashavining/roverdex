@@ -1,31 +1,64 @@
 <%- include('partials/header') %>
-<main class="flex flex-col min-h-screen">
+<main class="flex flex-col min-h-screen bg-roverNeutral">
+  <div class="h-56 bg-gradient-to-r from-roverNavy to-roverBlue border-b-8 border-roverGold">
+  </div>
   <div>
-    <div>
-      <h2>Name: <%= pet.name %></h2>
-      <img src="<%= pet.image%>" />
-
-      <div>
-        <p>Service Type: <%= pet.careType %></p>
-        <p>Service Frequency: <%= pet.frequency %></p>
-        <p>Animal Type: <%= pet.animalType %></p>
-        <p>Allergies: <%= pet.allergies %></p>
-        <p>Medicines: <%= pet.meds %></p>
-        <p>Treats/Food: <%= pet.treats %></p>
-        <p>Notes: <%= pet.notes %></p>
-
-        <%if(pet.user == user.id){ %>
-          <a href="/pet/editPet/<%=pet.id %>"><span class="fas fa-edit"></span></a>
-          <form action="/pet/deletePet/<%= pet.id %>?_method=DELETE" method="POST">
-            <button class="btn btn-primary fa fa-trash" type="submit"></button>
-          </form>
-        <%}%>
+    <div class="grid place-items-center">
+      <div class="absolute text-center mb-6" style="top:20%; left:40%;" >
+        <img src="<%= pet.image%>" width="300px" height="300px" class="rounded-full" />
+        <h1 class="mt-3 text-5xl font-bold text-roverNavy"><%= pet.name %></h1>  
       </div>
+      <section class="w-9/12 mt-72 bg-roverAqua pb-6">
+        <h2 class="pl-6 text-3xl text-white font-bold bg-roverNavy py-3 mb-3">Basic Information:</h2>
+        <div class="flex space-evenly px-6 mt-3">
+          <div class="basis-1/2">
+            <p class="mb-3">
+              <span class="font-bold text-roverNavy"> 
+                Service Type: 
+              </span>
+              <%= pet.careType %>
+            </p>
+            <p class="mb-3">
+              <span class="font-bold text-roverNavy"> 
+                Service Frequency: 
+              </span>
+              <%= pet.frequency %>
+            </p>
+            <p class="mb-3">
+              <span class="font-bold text-roverNavy"> 
+                Animal Type: 
+              </span> 
+              <%= pet.animalType %></p>  
+          </div>
+            <div class="basis-1/2">
+              <p class="mb-3">
+                <span class="font-bold text-roverNavy"> 
+                  Allergies: 
+                </span> <%= pet.allergies %></p>
+              <p class="mb-3"><span class="font-bold text-roverNavy"> 
+                Medicines: 
+              </span> <%= pet.meds %></p>
+              <p class="mb-3"><span class="font-bold text-roverNavy"> 
+                Treats/Food: 
+              </span>  <%= pet.treats %></p>  
+            </div>    
+        </div>
+      </section>
+      <section class="w-9/12 mt-16 bg-roverAqua pb-6">
+        <h2 class="pl-6 text-3xl text-white font-bold bg-roverNavy py-3 mb-3">Note:</h2>
+        <p class="px-6"><%= pet.notes %></p>
+      </section>
+  <div class="flex my-16">
+  <%if(pet.user == user.id){ %>
+    <a href="/pet/editPet/<%=pet.id %>"><span class="fas fa-edit text-roverNeutral bg-roverNavy py-3 px-6 rounded hover:bg-roverAqua"> Edit</span></a>
+    <form action="/pet/deletePet/<%= pet.id %>?_method=DELETE" method="POST" class="ml-3">
+      <button class="btn btn-primary fa fa-trash bg-roverNavy text-roverNeutral py-3 px-6 rounded hover:bg-roverAqua" type="submit"> Delete</button>
+    </form>
+  <%}%>
+  </div>
+       
+    </div>
 
-    </div>
-    <div>
-      <p><%= pet.title %></p>
-    </div>
   </div>
 </main>
 

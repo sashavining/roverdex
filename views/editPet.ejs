@@ -1,47 +1,77 @@
 <%- include('partials/header') %>
+<div class="p-3 bg-roverNeutral"></div>
+<main class="bg-roverNeutral overflow-hidden flex items-center justify-center">
+  <div class="bg-roverGold lg:w-7/12 md:w-8/12 w-10/12 shadow-3xl my-20">
+    <div class="bg-roverBlue absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full p-2 md:p-4">
+      <img width="70px" height="auto" src="/imgs/add-pet-icon-transparent.png" alt="">
+    </div>
+    <form class="p-12 md:p-24" action="/pet/editPet/<%= pet.id %>" enctype="multipart/form-data" method="POST">
+      <h2 class="text-center font-brand font-extrabold text-5xl text-roverNavy mb-6">Edit Pet</h2>
+        <label for="name">Name</label>
+        <div class="flex items-center text-lg mb-6 md:mb-8">
+          <img class="absolute ml-3" width="24px" height="auto" src="/imgs/form-icons/paw-icon.png" alt="">
+          <input type="text" id="name" name="name" class="bg-roverNeutral pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Name">
+        </div>
+      <label for="careType">Service Type</label>
+      <div class="flex items-center text-lg mb-6 md:mb-8">
+        <img class="absolute ml-3" width="24px" height="auto" src="/imgs/form-icons/services-icon.png" alt="">
+        <input name="careType" type="text" id="careType" class="bg-roverNeutral pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Service Type" />
+      </div>
+      <label for="frequency">Service Frequency</label>
+      <div class="flex items-center text-lg mb-6 md:mb-8">
+        <img class="absolute ml-3" width="24px" height="auto" src="/imgs/form-icons/clock-icon.png" alt="">
+        <input name="frequency" type="text" id="frequency" class="bg-roverNeutral pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Service Frequency" />
+      </div>
+      <label for="animalType">Animal Type</label>
+      <div class="flex items-center text-lg mb-6 md:mb-8">
+        <img class="absolute ml-3" width="24px" height="auto" src="/imgs/form-icons/paw-icon.png" alt="">
+        <input name="animalType" type="text" id="animalType" class="bg-roverNeutral pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Animal Type" />
+      </div>
+      <label for="allergies">Allergies</label>
+      <div class="flex items-center text-lg mb-6 md:mb-8">
+        <img class="absolute ml-3" width="24px" height="auto" src="/imgs/form-icons/allergies-icon.png" alt="">
+        <input name="allergies" type="text" id="allergies" class="bg-roverNeutral pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Allergies" />
+      </div>
+      <label for="meds">Medicines</label>
+      <div class="flex items-center text-lg mb-6 md:mb-8">
+        <img class="absolute ml-3" width="24px" height="auto" src="/imgs/form-icons/medicine-icon.png" alt="">
+        <input name="meds" type="text" id="meds" class="bg-roverNeutral pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Medicines" />
+      </div>
+      <label for="treats">Treats/Food Details:</label>
+      <div class="flex items-center text-lg mb-6 md:mb-8">
+        <img class="absolute ml-3" width="24px" height="auto" src="/imgs/form-icons/dog-sniff-bone.png" alt="">
+        <input name="treats" type="text" id="treats" class="bg-roverNeutral pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Medicines" />
+      </div>
+      <label for="notes">Notes:</label>
+      <div class="flex items-center text-lg mb-6 md:mb-8">
+        <img class="absolute ml-3" width="24px" height="auto" src="/imgs/form-icons/note-icon.png" alt="">
+        <textarea name="notes" id="notes" class="bg-roverNeutral pl-12 py-2 md:py-4 focus:outline-none w-full"></textarea>
+      </div>
+      
 
-<div>
-    <h2>Edit Pet:</h2>
-    <form action="/pet/editPet/<%= pet.id %>" enctype="multipart/form-data" method="POST">
-      <div>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" value="<%= pet.name %>">
+      <label for="imgUpload">Image:</label>
+      <div class="flex items-center text-lg mb-6 md:mb-8">
+        <img class="absolute ml-3" width="24px" height="auto" src="/imgs/form-icons/photo-upload.png" alt="">
+        <input name="file" type="file" id="imgUpload" class="bg-roverNeutral pl-12 py-2 md:py-4 focus:outline-none w-full" />
       </div>
-      <div>
-        <label for="careType">Service Type:</label>
-        <input type="text" id="careType" name="careType" value="<%= pet.careType %>">
-      </div>
-      <div>
-        <label for="frequency">Service Frequency:</label>
-        <input type="text" id="frequency" name="frequency" value="<%= pet.frequency %>">
-      </div>
-      <div>
-        <label for="animalType">Animal Type:</label>
-        <input type="text" id="animalType" name="animalType" value="<%= pet.animalType %>">
-      </div>
-      <div>
-        <label for="allergies">Allergies:</label>
-        <input type="text" id="allergies" name="allergies" value="<%= pet.allergies %>">
-      </div>
-      <div>
-        <label for="meds">Medicines:</label>
-        <input type="text" id="meds" name="meds"value="<%= pet.meds %>">
-      </div>
-      <div>
-        <label for="treats">Treats/Food Details:</label>
-        <input type="text" id="treats" name="treats" value="<%= pet.treats %>">
-      </div>
-      <div>
-        <label for="notes" >Note:</label>
-        <textarea id="notes" name="notes"><%= pet.notes %></textarea>
-      </div>
-      <div>
-        <label for="imgUpload">Image</label>
-        <input type="file" id="imageUpload" name="file">
-      </div>
-      <button type="submit" value="Upload">Submit</button>
-      <a href="/pet/<%= pet.id %>">Cancel</a>
+
+      
+
+
+      <section class="text-red-700 text-center my-3">
+        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+          <div><%= el.msg %></div>
+          <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+          messages.info.forEach( el => { %>
+          <div><%= el.msg %></div>
+          <% }) %> <% } %>    
+      </section>  
+      <button type="submit" class="bg-roverBlue font-medium p-2 md:p-4 text-white uppercase w-full hover:bg-roverAqua" value="Upload">Edit pet</button>
     </form>
   </div>
-  
+ </div>
+</div>
+</main>
+
+<%- include('partials/footer') %>
 <%- include('partials/footer') %>
