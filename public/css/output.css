@@ -822,6 +822,10 @@ select{
   margin-top:4rem;
 }
 
+.mt-20{
+  margin-top:5rem;
+}
+
 .block{
   display:block;
 }
@@ -864,10 +868,6 @@ select{
 
 .w-64{
   width:16rem;
-}
-
-.w-56{
-  width:14rem;
 }
 
 .w-10\/12{
