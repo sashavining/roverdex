@@ -1,13 +1,40 @@
-<%- include('partials/header') %>
-<main class="flex flex-col min-h-screen">
-  <div>
-      <p><strong>User Name</strong>: <%= user.userName %></p>
-      <p><strong>Email</strong>: <%= user.email %></p>
-  </div>
-        
-  <div>
-    <a href="/clients">Return to Clients</a>
-  </div>  
       
+
+  <%- include('partials/header') %>
+<main class="flex flex-col min-h-screen bg-roverNeutral">
+  <div class="h-56 bg-gradient-to-r from-roverNavy to-roverBlue border-b-8 border-roverGold">
+  </div>
+  <div>
+    <div class="grid place-items-center">
+      <div class="absolute text-center mb-6" style="top:20%; left:40%;" >
+        <h1 class="mt-3 text-5xl font-bold text-roverNeutral">User Profile</h1>  
+      </div>
+      <section class="w-9/12 mt-20 bg-roverAqua pb-6">
+        <h2 class="pl-6 text-3xl text-white font-bold bg-roverNavy py-3 mb-3">Basic Information:</h2>
+        <div class="flex space-evenly px-6 mt-3">
+          <div class="basis-1/2">
+            <p class="mb-3">
+              <span class="font-bold text-roverNavy"> 
+                Username: 
+              </span>
+              <%= user.userName %>
+            </p>
+            <p class="mb-3">
+              <span class="font-bold text-roverNavy"> 
+                Email: 
+              </span>
+              <%= user.email %> 
+            </p>
+          </div>
+            </div> 
+        
+      </section>
+      <span class="mt-20 fas fa-paw text-roverNeutral bg-roverNavy py-3 px-6 rounded hover:bg-roverAqua"> <a href="/clients">Return to clients</a></span>   
+    </div>
+    </div>
+
+  </div>
 </main>
+
 <%- include('partials/footer') %>
+
